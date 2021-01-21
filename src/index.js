@@ -1,14 +1,36 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import CalculatorApp from "./CalculatorApp";
+import TemperatureConvertor from "./TemperatureConvertor";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <App />
+        </Route>
+
+        <Route exact path="/calculator">
+          <CalculatorApp />
+        </Route>
+        <Route path="/temperatureconvertor">
+          <TemperatureConvertor />
+        </Route>
+        <Route path="/agecalculator">{/* <AgeCalculator /> */}</Route>
+        <Route path="/calculator">{/* <Calculator /> */}</Route>
+        <Route path="/temperatureconvertor">
+          {/* <TemperatureConvertor /> */}
+        </Route>
+        <Route path="/agecalculator">{/* <AgeCalculator /> */}</Route>
+      </Switch>
+    </Router>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
